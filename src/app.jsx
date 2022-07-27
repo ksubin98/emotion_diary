@@ -1,8 +1,13 @@
 import React from 'react';
 import './app.css';
+import MyCalendar from './components/Mycalendar';
 
 function App() {
-  return <h1>Hello :)</h1>
+  return (
+    <>
+      <MyCalendar />
+    </>
+  )
 }
 
 export default App;
