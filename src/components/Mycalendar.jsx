@@ -1,19 +1,24 @@
 import moment from 'moment';
-import axios from 'axios';
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css' ;
+import AddBtn from './addBtn';
 
 const MyCalendar = () => {
   const [value, onChange] = useState(new Date());
 
+  const click = (e) => {
+    console.dir(e);
+    console.log(e.value)
+  }
+
   return (
-    <div>
+    <>
       <Calendar onChange={onChange} value={value} />
-      <div className="text-gray-500 mt-4">
+      <span className="text-gray-500 mt-4" onClick={click}>
         {moment(value).format("YYYY년 MM년 DD일")}
-      </div>
-    </div>
+      </span> <AddBtn />
+    </>
   );
 }
 
